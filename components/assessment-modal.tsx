@@ -7,11 +7,12 @@ import { Button } from '@/components/ui/button'
 interface AssessmentModalProps {
   isOpen: boolean
   onClose: () => void
+  defaultDestination?: string
 }
 
 const COOLDOWN_MS = 120_000
 
-export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProps) {
+export default function AssessmentModal({ isOpen, onClose, defaultDestination }: AssessmentModalProps) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -21,6 +22,7 @@ export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProp
     cgpa: '',
     languageTest: '',
     languageScore: '',
+    destination: defaultDestination || '',
   })
 
   const [submitted, setSubmitted] = useState(false)
@@ -44,6 +46,7 @@ export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProp
       cgpa: '',
       languageTest: '',
       languageScore: '',
+      destination: defaultDestination || '',
     })
     setCaptchaInput('')
     setErrorMessage(null)
@@ -52,15 +55,16 @@ export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProp
   }
 
   const generateCaptcha = () => {
-    const operators = ['+', '-', '×'] as const
+    // const operators = ['+', '-', '×'] as const
+    const operators = ['+'] as const
     const operator = operators[Math.floor(Math.random() * operators.length)]
     const a = Math.floor(Math.random() * 12) + 1
     const b = Math.floor(Math.random() * 12) + 1
 
     let answer = 0
-    if (operator === '+') answer = a + b
-    if (operator === '-') answer = a - b
-    if (operator === '×') answer = a * b
+    if (operator === '+') answer = a + b 
+    // if (operator === '-') answer = a - b 
+    // if (operator === '×') answer = a * b
 
     setCaptcha({ a, b, operator, answer })
     setCaptchaInput('')
@@ -72,6 +76,10 @@ export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProp
       generateCaptcha()
     }
   }, [isOpen])
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, destination: defaultDestination || '' }))
+  }, [defaultDestination])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -222,6 +230,21 @@ export default function AssessmentModal({ isOpen, onClose }: AssessmentModalProp
                       placeholder="+880 1XXXXXXXXX"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label htmlFor="destination" className="block text-sm font-medium text-foreground mb-2">
+                    Study Destination
+                  </label>
+                  <input
+                    type="text"
+                    id="destination"
+                    name="destination"
+                    value={formData.destination}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    placeholder="e.g. United Kingdom"
+                  />
                 </div>
 
                 <div>

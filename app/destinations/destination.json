@@ -1,0 +1,618 @@
+{
+    "countries": [
+        {
+            "id": "1",
+            "country_name": "United Kingdom",
+            "country_code": "GB",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Oxford",
+                    "location": "Oxford, England",
+                    "description": "One of the oldest and most prestigious universities in the world, known for its rigorous academic programs and rich history.",
+                    "website": "https://www.ox.ac.uk/"
+                },
+                {
+                    "id": "2",
+                    "name": "University of Cambridge",
+                    "location": "Cambridge, England",
+                    "description": "Renowned for its excellence in teaching and research, Cambridge has a long-standing tradition of academic achievement.",
+                    "website": "https://www.cam.ac.uk/"
+                },
+                {
+                    "id": "3",
+                    "name": "Imperial College London",
+                    "location": "London, England",
+                    "description": "A leading institution specializing in science, engineering, medicine, and business, known for its innovative research.",
+                    "website": "https://www.imperial.ac.uk/"
+                }
+            ],
+            "description": "Explore top universities in the United Kingdom, including Oxford, Cambridge, and Imperial College London. Discover their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "study-uk.britishcouncil.org"
+        },
+        {
+            "id": "2",
+            "country_name": "United States",
+            "country_code": "US",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Harvard University",
+                    "location": "Cambridge, Massachusetts",
+                    "description": "An Ivy League university known for its rigorous academics, distinguished faculty, and influential alumni.",
+                    "website": "https://www.harvard.edu/"
+                },
+                {
+                    "id": "2",
+                    "name": "Stanford University",
+                    "location": "Stanford, California",
+                    "description": "A leading research university with a strong emphasis on innovation and entrepreneurship.",
+                    "website": "https://www.stanford.edu/"
+                },
+                {
+                    "id": "3",
+                    "name": "Massachusetts Institute of Technology (MIT)",
+                    "location": "Cambridge, Massachusetts",
+                    "description": "Renowned for its cutting-edge research and education in science, technology, and engineering.",
+                    "website": "https://www.mit.edu/"
+                }
+            ],
+            "description": "Discover top universities in the United States, including Harvard, Stanford, and MIT. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "educationusa.state.gov"
+        },
+        {
+            "id": "3",
+            "country_name": "Canada",
+            "country_code": "CA",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Toronto",
+                    "location": "Toronto, Ontario",
+                    "description": "One of Canada's leading universities, known for its research excellence and diverse academic programs.",
+                    "website": "https://www.utoronto.ca/"
+                },
+                {
+                    "id": "2",
+                    "name": "University of British Columbia (UBC)",
+                    "location": "Vancouver, British Columbia",
+                    "description": "A globally recognized institution with a strong focus on research and sustainability.",
+                    "website": "https://www.ubc.ca/"
+                },
+                {
+                    "id": "3",
+                    "name": "McGill University",
+                    "location": "Montreal, Quebec",
+                    "description": "A prestigious university known for its research contributions and vibrant student community.",
+                    "website": "https://www.mcgill.ca/"
+                }
+            ],
+            "description": "Explore top universities in Canada, including the University of Toronto, UBC, and McGill. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.educanada.ca"
+        },
+        {
+            "id": "4",
+            "country_name": "Australia",
+            "country_code": "AU",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Melbourne",
+                    "location": "Melbourne, Victoria",
+                    "description": "A leading Australian university known for its research excellence and diverse academic offerings.",
+                    "website": "https://www.unimelb.edu.au/"
+                },
+                {
+                    "id": "2",
+                    "name": "Australian National University (ANU)",
+                    "location": "Canberra, Australian Capital Territory",
+                    "description": "A prestigious institution with a strong focus on research and public policy.",
+                    "website": "https://www.anu.edu.au/"
+                },
+                {
+                    "id": "3",
+                    "name": "University of Sydney",
+                    "location": "Sydney, New South Wales",
+                    "description": "One of Australia's oldest universities, known for its comprehensive programs and vibrant campus life.",
+                    "website": "https://www.sydney.edu.au/"
+                }
+            ],
+            "description": "Discover top universities in Australia, including the University of Melbourne, ANU, and the University of Sydney. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinaustralia.gov.au"
+        },
+        {
+            "id": "5",
+            "country_name": "Germany",
+            "country_code": "DE",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Technical University of Munich (TUM)",
+                    "location": "Munich, Bavaria",
+                    "description": "A leading research university in Germany, known for its engineering and technology programs.",
+                    "website": "https://www.tum.de/"
+                },
+                {
+                    "id": "2",
+                    "name": "Ludwig Maximilian University of Munich (LMU)",
+                    "location": "Munich, Bavaria",
+                    "description": "One of Germany's oldest universities, renowned for its research and academic excellence.",
+                    "website": "https://www.en.uni-muenchen.de/"
+                },
+                {
+                    "id": "3",
+                    "name": "Heidelberg University",
+                    "location": "Heidelberg, Baden-Württemberg",
+                    "description": "A prestigious university with a strong focus on research and international collaboration.",
+                    "website": "https://www.uni-heidelberg.de/en"
+                }
+            ],
+            "description": "Explore top universities in Germany, including TUM, LMU, and Heidelberg University. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.study-in-germany.de"
+        },
+        {
+            "id": "6",
+            "country_name": "France",
+            "country_code": "FR",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Sorbonne University",
+                    "location": "Paris, Île-de-France",
+                    "description": "A historic university in Paris, known for its humanities and social sciences programs.",
+                    "website": "https://www.sorbonne-universite.fr/en"
+                },
+                {
+                    "id": "2",
+                    "name": "École Polytechnique",
+                    "location": "Palaiseau, Île-de-France",
+                    "description": "A leading engineering school in France, renowned for its rigorous academic programs.",
+                    "website": "https://www.polytechnique.edu/en"
+                },
+                {
+                    "id": "3",
+                    "name": "Sciences Po",
+                    "location": "Paris, Île-de-France",
+                    "description": "A prestigious institution specializing in political science and international relations.",
+                    "website": "https://www.sciencespo.fr/en/"
+                }
+            ],
+            "description": "Discover top universities in France, including Sorbonne University, École Polytechnique, and Sciences Po. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.campusfrance.org/en"
+        },
+        {
+            "id": "7",
+            "country_name": "Netherlands",
+            "country_code": "NL",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Delft University of Technology (TU Delft)",
+                    "location": "Delft, South Holland",
+                    "description": "A leading technical university in the Netherlands, known for its engineering and technology programs.",
+                    "website": "https://www.tudelft.nl/en/"
+                },
+                {
+                    "id": "2",
+                    "name": "University of Amsterdam (UvA)",
+                    "location": "Amsterdam, North Holland",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.uva.nl/en"
+                },
+                {
+                    "id": "3",
+                    "name": "Eindhoven University of Technology (TU/e)",
+                    "location": "Eindhoven, North Brabant",
+                    "description": "A research-intensive university specializing in engineering and technology.",
+                    "website": "https://www.tue.nl/en/"
+                }
+            ],
+            "description": "Explore top universities in the Netherlands, including TU Delft, UvA, and TU/e. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinholland.nl"
+        },
+        {
+            "id": "8",
+            "country_name": "Sweden",
+            "country_code": "SE",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "KTH Royal Institute of Technology",
+                    "location": "Stockholm, Sweden",
+                    "description": "A leading technical university in Sweden, known for its engineering and technology programs.",
+                    "website": "https://www.kth.se/en"
+                },
+                {
+                    "id": "2",
+                    "name": "Lund University",
+                    "location": "Lund, Skåne County",
+                    "description": "One of Sweden's oldest and most prestigious universities, offering a wide range of academic programs.",
+                    "website": "https://www.lu.se/"
+                },
+                {
+                    "id": "3",
+                    "name": "Uppsala University",
+                    "location": "Uppsala, Uppsala County",
+                    "description": "A historic university with a strong focus on research and international collaboration.",
+                    "website": "https://www.uu.se/en/"
+                }
+            ],
+            "description": "Discover top universities in Sweden, including KTH Royal Institute of Technology, Lund University, and Uppsala University. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinsweden.se"
+        },
+        {
+            "id": "9",
+            "country_name": "Japan",
+            "country_code": "JP",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Tokyo",
+                    "location": "Tokyo, Japan",
+                    "description": "Japan's leading university, known for its research excellence and diverse academic programs.",
+                    "website": "https://www.u-tokyo.ac.jp/en/"
+                },
+                {
+                    "id": "2",
+                    "name": "Kyoto University",
+                    "location": "Kyoto, Japan",
+                    "description": "A prestigious institution with a strong focus on research and international collaboration.",
+                    "website": "https://www.kyoto-u.ac.jp/en"
+                },
+                {
+                    "id": "3",
+                    "name": "Osaka University",
+                    "location": "Osaka, Japan",
+                    "description": "A comprehensive university offering a wide range of academic programs and research opportunities.",
+                    "website": "https://www.osaka-u.ac.jp/en"
+                }
+            ],
+            "description": "Explore top universities in Japan, including the University of Tokyo, Kyoto University, and Osaka University. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinjapan.go.jp/en/"
+        },
+        {
+            "id": "10",
+            "country_name": "Hungary",
+            "country_code": "HU",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Eötvös Loránd University",
+                    "location": "Budapest, Hungary",
+                    "description": "One of Hungary's oldest and most prestigious universities, known for its research and academic excellence.",
+                    "website": "https://www.elte.hu/en/"
+                },
+                {
+                    "id": "2",
+                    "name": "Budapest University of Technology and Economics (BME)",
+                    "location": "Budapest, Hungary",
+                    "description": "A leading technical university in Hungary, specializing in engineering and technology programs.",
+                    "website": "https://www.bme.hu/?language=en"
+                },
+                {
+                    "id": "3",
+                    "name": "University of Szeged",
+                    "location": "Szeged, Hungary",
+                    "description": "A comprehensive university offering a wide range of academic programs and research opportunities.",
+                    "website": "https://u-szeged.hu/english"
+                }
+            ],
+            "description": "Explore top universities in Hungary, including Eötvös Loránd University, BME, and University of Szeged. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinhungary.hu"
+        },
+        {
+            "id": "11",
+            "country_name": "Ireland",
+            "country_code": "IE",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Trinity College Dublin",
+                    "location": "Dublin, Ireland",
+                    "description": "Ireland's oldest university, known for its rich history and academic excellence.",
+                    "website": "https://www.tcd.ie/"
+                },
+                {
+                    "id": "2",
+                    "name": "University College Dublin (UCD)",
+                    "location": "Dublin, Ireland",
+                    "description": "A leading research university offering a wide range of academic programs.",
+                    "website": "https://www.ucd.ie/"
+                },
+                {
+                    "id": "3",
+                    "name": "National University of Ireland Galway (NUI Galway)",
+                    "location": "Galway, Ireland",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.nuigalway.ie/"
+                }
+            ],
+            "description": "Discover top universities in Ireland, including Trinity College Dublin, UCD, and NUI Galway. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.educationinireland.com"
+        },
+        {
+            "id": "12",
+            "country_name": "Malta",
+            "country_code": "MT",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Malta",
+                    "location": "Msida, Malta",
+                    "description": "Malta's leading university, offering a wide range of academic programs and research opportunities.",
+                    "website": "https://www.um.edu.mt/"
+                },
+                {
+                    "id": "2",
+                    "name": "MCAST - Malta College of Arts, Science & Technology",
+                    "location": "Paola, Malta",
+                    "description": "A vocational and technical education institution providing practical skills and training.",
+                    "website": "https://www.mcast.edu.mt/"
+                },
+                {
+                    "id": "3",
+                    "name": "American University of Malta (AUM)",
+                    "location": "Cospicua, Malta",
+                    "description": "An international university offering American-style education in various disciplines.",
+                    "website": "https://aum.edu.mt/"
+                }
+            ],
+            "description": "Explore top universities in Malta, including the University of Malta, MCAST, and American University of Malta. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinmalta.com"
+        },
+        {
+            "id": "13",
+            "country_name": "Italy",
+            "country_code": "IT",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Bologna",
+                    "location": "Bologna, Italy",
+                    "description": "One of the oldest universities in the world, known for its rich history and academic excellence.",
+                    "website": "https://www.unibo.it/en"
+                },
+                {
+                    "id": "2",
+                    "name": "Sapienza University of Rome",
+                    "location": "Rome, Italy",
+                    "description": "A leading research university offering a wide range of academic programs.",
+                    "website": "https://www.uniroma1.it/en"
+                },
+                {
+                    "id": "3",
+                    "name": "University of Milan",
+                    "location": "Milan, Italy",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.unimi.it/en"
+                }
+            ],
+            "description": "Discover top universities in Italy, including the University of Bologna, Sapienza University of Rome, and University of Milan. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinitaly.esteri.it"
+        },
+        {
+            "id": "14",
+            "country_name": "Spain",
+            "country_code": "ES",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Barcelona",
+                    "location": "Barcelona, Spain",
+                    "description": "A leading university in Spain, known for its research excellence and diverse academic programs.",
+                    "website": "https://www.ub.edu/web/ub/en/"
+                },
+                {
+                    "id": "2",
+                    "name": "Complutense University of Madrid",
+                    "location": "Madrid, Spain",
+                    "description": "One of the oldest universities in Spain, offering a wide range of academic programs and research opportunities.",
+                    "website": "https://www.ucm.es/english"
+                },
+                {
+                    "id": "3",
+                    "name": "Autonomous University of Madrid (UAM)",
+                    "location": "Madrid, Spain",
+                    "description": "A prestigious institution with a strong focus on research and international collaboration.",
+                    "website": "https://www.uam.es/ss/Satellite/en/home.htm"
+                }
+            ],
+            "description": "Explore top universities in Spain, including the University of Barcelona, Complutense University of Madrid, and UAM. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinspain.info"
+        },
+        {
+            "id": "15",
+            "country_name": "Greece",
+            "country_code": "GR",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "National and Kapodistrian University of Athens",
+                    "location": "Athens, Greece",
+                    "description": "One of the oldest universities in Greece, known for its rich history and academic excellence.",
+                    "website": "https://en.uoa.gr/"
+                },
+                {
+                    "id": "2",
+                    "name": "Aristotle University of Thessaloniki",
+                    "location": "Thessaloniki, Greece",
+                    "description": "A leading research university offering a wide range of academic programs.",
+                    "website": "https://www.auth.gr/en"
+                },
+                {
+                    "id": "3",
+                    "name": "University of Patras",
+                    "location": "Patras, Greece",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.upatras.gr/en/"
+                }
+            ],
+            "description": "Discover top universities in Greece, including the University of Athens, Aristotle University of Thessaloniki, and University of Patras. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.study-in-greece.gr"
+
+        },
+        {
+            "id": "16",
+            "country_name": "Malaysia",
+            "country_code": "MY",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Malaya",
+                    "location": "Kuala Lumpur, Malaysia",
+                    "description": "Malaysia's oldest and most prestigious university, known for its research excellence and diverse academic programs.",
+                    "website": "https://www.um.edu.my/"
+                },
+                {
+                    "id": "2",
+                    "name": "Universiti Kebangsaan Malaysia (UKM)",
+                    "location": "Bangi, Selangor, Malaysia",
+                    "description": "A leading research university offering a wide range of academic programs.",
+                    "website": "https://www.ukm.my/ukmweb/"
+                },
+                {
+                    "id": "3",
+                    "name": "Universiti Putra Malaysia (UPM)",
+                    "location": "Serdang, Selangor, Malaysia",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.upm.edu.my/"
+                }
+            ],
+            "description": "Explore top universities in Malaysia, including the University of Malaya, UKM, and UPM. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinmalaysia.gov.my"
+        },
+        {
+            "id": "17",
+            "country_name": "Singapore",
+            "country_code": "SG",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "National University of Singapore (NUS)",
+                    "location": "Singapore",
+                    "description": "A leading global university known for its research excellence and diverse academic programs.",
+                    "website": "https://www.nus.edu.sg/"
+                },
+                {
+                    "id": "2",
+                    "name": "Nanyang Technological University (NTU)",
+                    "location": "Singapore",
+                    "description": "A prestigious institution specializing in engineering, technology, and business programs.",
+                    "website": "https://www.ntu.edu.sg/"
+                },
+                {
+                    "id": "3",
+                    "name": "Singapore Management University (SMU)",
+                    "location": "Singapore",
+                    "description": "A comprehensive university with a strong focus on business, law, and social sciences.",
+                    "website": "https://www.smu.edu.sg/"
+                }
+            ],
+            "description": "Discover top universities in Singapore, including NUS, NTU, and SMU. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinsingapore.gov.sg"
+        },
+        {
+            "id": "18",
+            "country_name": "New Zealand",
+            "country_code": "NZ",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "University of Auckland",
+                    "location": "Auckland, New Zealand",
+                    "description": "New Zealand's largest and most prestigious university, known for its research excellence and diverse academic programs.",
+                    "website": "https://www.auckland.ac.nz/"
+                },
+                {
+                    "id": "2",
+                    "name": "University of Otago",
+                    "location": "Dunedin, New Zealand",
+                    "description": "A leading research university known for its academic excellence and strong commitment to student welfare.",
+                    "website": "https://www.otago.ac.nz/"
+                }
+            ],
+            "description": "Explore top universities in New Zealand, including the University of Auckland and University of Otago. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinnewzealand.co.nz"
+        },
+        {
+            "id": "19",
+            "country_name": "South Korea",
+            "country_code": "KR",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "Seoul National University (SNU)",
+                    "location": "Seoul, South Korea",
+                    "description": "South Korea's leading university, known for its research excellence and diverse academic programs.",
+                    "website": "https://en.snu.ac.kr/"
+                },
+                {
+                    "id": "2",
+                    "name": "Korea Advanced Institute of Science and Technology (KAIST)",
+                    "location": "Daejeon, South Korea",
+                    "description": "A prestigious institution specializing in science, technology, and engineering programs.",
+                    "website": "https://www.kaist.ac.kr/en/"
+                },
+                {
+                    "id": "3",
+                    "name": "Yonsei University",
+                    "location": "Seoul, South Korea",
+                    "description": "A comprehensive university with a strong focus on research and international collaboration.",
+                    "website": "https://www.yonsei.ac.kr/en_sc/"
+                }
+            ],
+            "description": "Discover top universities in South Korea, including SNU, KAIST, and Yonsei University. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinkorea.go.kr"
+        },
+        {
+            "id": "20",
+            "country_name": "Switzerland",
+            "country_code": "CH",
+            "destinations": [
+                {
+                    "id": "1",
+                    "name": "ETH Zurich (Swiss Federal Institute of Technology)",
+                    "location": "Zurich, Switzerland",
+                    "description": "A leading technical university known for its research excellence and innovative programs.",
+                    "website": "https://ethz.ch/en.html"
+                },
+                {
+                    "id": "2",
+                    "name": "University of Zurich",
+                    "location": "Zurich, Switzerland",
+                    "description": "A comprehensive university offering a wide range of academic programs and research opportunities.",
+                    "website": "https://www.uzh.ch/en.html"
+                },
+                {
+                    "id": "3",
+                    "name": "École Polytechnique Fédérale de Lausanne (EPFL)",
+                    "location": "Lausanne, Switzerland",
+                    "description": "A prestigious institution specializing in engineering, technology, and natural sciences.",
+                    "website": "https://www.epfl.ch/en/"
+                }
+            ],
+            "description": "Explore top universities in Switzerland, including ETH Zurich, University of Zurich, and EPFL. Learn about their programs, campuses, and opportunities for international students.",
+            "last_updated": "2024-06-15T12:00:00Z",
+            "country_study_website": "www.studyinswitzerland.plus"
+        }
+    ]
+}
