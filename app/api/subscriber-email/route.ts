@@ -47,7 +47,15 @@ export async function POST(request: NextRequest) {
           <p>We're excited to have you on board!</p>
             <p>Thank you for subscribing to our newsletter. We promise to keep you updated with the latest news, insights, and exclusive offers.</p>
           <p>Best regards,</p>
-            <p><strong>Mamun's Academy</strong></p>
+            <p style="font-weight: bold; font-size: 20px;">Mamun's Academy</p>
+            <p>Visit our website: <a href="https://mamunsacademy.com" target="_blank">mamunsacademy.com</a></p>
+            <p>Follow us on social media: <a href="https://www.facebook.com/mamunsacademy" target="_blank">Facebook</a> | <a href="https://www.instagram.com/mamunsacademy" target="_blank">Instagram</a></p>
+            <p>Contact us: <a href="mailto:${process.env.ASSESSMENT_TO_EMAIL}">${process.env.ASSESSMENT_TO_EMAIL}</a></p>
+            <p>WhatsApp: <a href="https://wa.me/8801712345678" target="_blank">+880 1712-345678</a></p>
+
+            <p style="color: #af0000; font-size: 14px;">
+              Note: If you did not subscribe to our newsletter, please ignore this email.
+            </p>
         </div>
       `,
     }
