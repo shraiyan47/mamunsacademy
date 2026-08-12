@@ -1,18 +1,106 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import path from 'path'
+import fs from 'fs/promises'
+
+
+
+interface SubscriberLogEntry { // Define the structure of a subscriber log entry
+  id: string
+  email: string
+  createdAt: string
+  lastUpdatedAt: string
+  submissionCount: number
+}
+
+
+const LOG_FILE_PATH = path.join(process.cwd(), 'data', 'subscriber_log.json')
+const RATE_LIMIT_WINDOW_MS = 2 * 60 * 1000 // 2 minutes
+const MAX_SUBMISSIONS_WITHIN_WINDOW = 1 // Number of submissions within 2 minutes
+
+const now = new Date()
+const trackingCode = `MASUB00${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`
+
+async function readLogFile(): Promise<SubscriberLogEntry[]> { // Read the log file and return the entries
+  try {
+    const raw = await fs.readFile(LOG_FILE_PATH, 'utf8')
+    if (!raw.trim()) return []
+    return JSON.parse(raw) as SubscriberLogEntry[]
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      await fs.writeFile(LOG_FILE_PATH, '[]', 'utf8')
+      return []
+    }
+    throw error
+  }
+}
+
+
+async function writeLogFile(entries: SubscriberLogEntry[]) { // Write the updated entries back to the log file
+  await fs.writeFile(LOG_FILE_PATH, JSON.stringify(entries, null, 2), 'utf8')
+}
 
 export async function POST(request: NextRequest) {
-  try {
-    const {
-      email
-    } = await request.json()
 
+  try {
+    const {email} = await request.json()
+
+    
     if ( !email ) {
       return NextResponse.json(
         { success: false, error: 'Email is required.' },
         { status: 400 }
       )
     }
+
+    const existingEntries = await readLogFile()
+    const matchedEntry = existingEntries.find((entry) => entry.email.toLowerCase() === email.toLowerCase() )
+
+    const nowMs = Date.now()
+    const recentMatches = matchedEntry
+      ? existingEntries.filter((entry) => {
+        if (entry.id !== matchedEntry.id) return false
+        const lastUpdatedAt = Date.parse(entry.lastUpdatedAt)
+        return !Number.isNaN(lastUpdatedAt) && nowMs - lastUpdatedAt <= RATE_LIMIT_WINDOW_MS
+      })
+      : []
+
+    if (matchedEntry && recentMatches.length > 0 && matchedEntry.submissionCount >= MAX_SUBMISSIONS_WITHIN_WINDOW) {
+      const updatedEntry: SubscriberLogEntry = {
+        ...matchedEntry,
+        lastUpdatedAt: new Date().toISOString(),
+        submissionCount: matchedEntry.submissionCount + 1,
+      }
+
+      const nextEntries = existingEntries.map((entry) => (entry.id === matchedEntry.id ? updatedEntry : entry))
+      await writeLogFile(nextEntries)
+
+      return NextResponse.json(
+        { success: false, error: 'Too many submissions in a short time. Your access has been blocked.' },
+        { status: 429 }
+      )
+    }
+
+    const nextEntry: SubscriberLogEntry = matchedEntry
+      ? { // Update existing entry
+        ...matchedEntry, 
+        email,
+        lastUpdatedAt: new Date().toISOString(),
+        submissionCount: matchedEntry.submissionCount + 1
+      }
+      : { // New entry
+        id: trackingCode,
+        email,
+        createdAt: new Date().toISOString(),
+        lastUpdatedAt: new Date().toISOString(),
+        submissionCount: 1,
+      }
+
+    const nextEntries = matchedEntry
+      ? existingEntries.map((entry) => (entry.id === matchedEntry.id ? nextEntry : entry))
+      : [...existingEntries, nextEntry]
+
+    await writeLogFile(nextEntries)
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',

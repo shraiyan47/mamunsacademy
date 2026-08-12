@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import nodemailer from 'nodemailer'
 
-interface UserLogEntry {
+interface UserLogEntry { // Define the structure of a user log entry
   id: string
   fullName: string
   email: string
@@ -19,9 +19,12 @@ interface UserLogEntry {
   ipBlock: 'yes' | 'no'
 }
 
-const LOG_FILE_PATH = path.join(process.cwd(), 'data', 'user_device_network_log.json') 
+const LOG_FILE_PATH = path.join(process.cwd(), 'data', 'user_device_network_log.json')
 const RATE_LIMIT_WINDOW_MS = 2 * 60 * 1000 // 2 minutes
 const MAX_SUBMISSIONS_WITHIN_WINDOW = 1 // Number of submissions within 2 minutes
+
+const now = new Date()
+const trackingCode = `MA00${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`
 
 async function readLogFile(): Promise<UserLogEntry[]> { // Read the log file and return the entries
   try {
@@ -103,9 +106,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const now = new Date()
-    const trackingCode = `${Math.random().toString(36).substring(2, 10).toUpperCase()}/${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`
-
     const ip = normalize(getClientValue(request, 'x-forwarded-for') || getClientValue(request, 'x-real-ip'))
     const location = normalize(getClientValue(request, 'x-vercel-ip-country')) || 'Unknown'
     const { deviceType, browser, os } = getDeviceDetails(request)
@@ -123,10 +123,10 @@ export async function POST(request: NextRequest) {
     const nowMs = Date.now()
     const recentMatches = matchedEntry
       ? existingEntries.filter((entry) => {
-          if (entry.id !== matchedEntry.id) return false
-          const lastUpdatedAt = Date.parse(entry.lastUpdatedAt)
-          return !Number.isNaN(lastUpdatedAt) && nowMs - lastUpdatedAt <= RATE_LIMIT_WINDOW_MS
-        })
+        if (entry.id !== matchedEntry.id) return false
+        const lastUpdatedAt = Date.parse(entry.lastUpdatedAt)
+        return !Number.isNaN(lastUpdatedAt) && nowMs - lastUpdatedAt <= RATE_LIMIT_WINDOW_MS
+      })
       : []
 
     if (matchedEntry && recentMatches.length > 0 && matchedEntry.submissionCount >= MAX_SUBMISSIONS_WITHIN_WINDOW) {
@@ -147,35 +147,35 @@ export async function POST(request: NextRequest) {
     }
 
     const nextEntry: UserLogEntry = matchedEntry
-      ? {
-          ...matchedEntry,
-          fullName,
-          email,
-          phone,
-          deviceType,
-          browser,
-          os,
-          location,
-          ip,
-          lastUpdatedAt: new Date().toISOString(),
-          submissionCount: matchedEntry.submissionCount + 1,
-          ipBlock: matchedEntry.ipBlock,
-        }
-      : {
-          id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-          fullName,
-          email,
-          phone,
-          deviceType,
-          browser,
-          os,
-          location,
-          ip,
-          createdAt: new Date().toISOString(),
-          lastUpdatedAt: new Date().toISOString(),
-          submissionCount: 1,
-          ipBlock: 'no',
-        }
+      ? { // Update existing entry
+        ...matchedEntry,
+        fullName,
+        email,
+        phone,
+        deviceType,
+        browser,
+        os,
+        location,
+        ip,
+        lastUpdatedAt: new Date().toISOString(),
+        submissionCount: matchedEntry.submissionCount + 1,
+        ipBlock: matchedEntry.ipBlock,
+      }
+      : { // New entry
+        id: trackingCode,
+        fullName,
+        email,
+        phone,
+        deviceType,
+        browser,
+        os,
+        location,
+        ip,
+        createdAt: new Date().toISOString(),
+        lastUpdatedAt: new Date().toISOString(),
+        submissionCount: 1,
+        ipBlock: 'no',
+      }
 
     const nextEntries = matchedEntry
       ? existingEntries.map((entry) => (entry.id === matchedEntry.id ? nextEntry : entry))
