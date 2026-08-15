@@ -18,7 +18,7 @@ export default function Destination({ onAssessmentClick }: DestinationProps) {
         'Malta',
         'Italy',
         'Greece',
-        'Malaysia'
+        'Malaysia',
     ]
     return (
         <>

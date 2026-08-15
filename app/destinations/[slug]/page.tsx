@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, ExternalLink, Globe, MapPin } from 'lucide-react'
 import DestinationPageShell from '@/components/destination-page-shell'
 import CountryFlag from '@/components/country-flag'
+import AssesssmentButton from '@/components/assessmentbutton'
 
 interface DestinationItem {
   id: string
@@ -89,13 +90,15 @@ export default async function CountryPage({ params }: CountryPageProps) {
                 </div>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">{country.description}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
+                  {/* <Link
                     href="/destinations/all"
                     className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
                   >
                     Explore other countries
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </Link> */}
+
+                  <AssesssmentButton selectedDestination={country.country_name} />  
                 </div>
               </div>
 

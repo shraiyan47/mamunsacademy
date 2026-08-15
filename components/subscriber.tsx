@@ -110,7 +110,6 @@ export default function Subscriber({ isOpen, onClose }: SubscriberProps) {
                         <Button type="submit"
                             disabled={isSubmitting}
                             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 whitespace-nowrap"
-                            
                             >
                             {isSubmitting ? 'Sending...' : 'Subscribe'}
                         </Button>

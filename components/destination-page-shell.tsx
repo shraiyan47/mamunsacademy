@@ -5,8 +5,8 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import Header from '@/components/header'
-import Footer from '@/components/footer'
-import AssessmentModal from '@/components/assessment-modal'
+import Footer from '@/components/footer' 
+// import AssesssmentButton from '@/components/assessmentbutton'
 
 interface DestinationPageShellProps {
   children: ReactNode
@@ -17,21 +17,16 @@ interface DestinationPageShellProps {
 
 export default function DestinationPageShell({
   children,
-  selectedDestination,
+  // selectedDestination,
   backHref = '/destinations',
   backLabel = 'Back to country list',
 }: DestinationPageShellProps) {
-  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false)
+  // const [isAssessmentOpen, setIsAssessmentOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background">
-      <Header onAssessmentClick={() => setIsAssessmentOpen(true)} />
-      <AssessmentModal
-        isOpen={isAssessmentOpen}
-        onClose={() => setIsAssessmentOpen(false)}
-        defaultDestination={selectedDestination}
-      />
-
+      {/* <Header /> */}
+    
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-4 sm:px-6">
         <Link
           href={backHref}
@@ -40,16 +35,6 @@ export default function DestinationPageShell({
           <ArrowLeft className="h-4 w-4" />
           {backLabel}
         </Link>
-
-        {selectedDestination ? (
-          <button
-            type="button"
-            onClick={() => setIsAssessmentOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
-          >
-            Apply now for {selectedDestination}
-          </button>
-        ) : null}
       </div>
 
       {children}
